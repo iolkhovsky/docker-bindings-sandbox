@@ -7,6 +7,9 @@ COPY install.sh .
 COPY requirements.txt .
 RUN chmod +x install.sh
 RUN ./install.sh
+COPY build_opencv.sh
+RUN chmod +x build_opencv.sh
+RUN ./build_opencv.sh
 
 RUN mkdir /workspace
 WORKDIR /workspace
