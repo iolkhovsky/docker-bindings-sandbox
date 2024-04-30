@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug blur_image",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/bazel-bin/server/blur_image",
+            "args": ["/repos/sandbox/lenna.jpg", "/repos/sandbox/output.jpg"],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "preLaunchTask": "Build blur_image",
+            "miDebuggerPath": "/usr/bin/gdb"
+        }
+    ]
+}
