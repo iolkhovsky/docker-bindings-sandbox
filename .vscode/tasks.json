@@ -2,10 +2,10 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build blur_image",
+            "label": "Build app",
             "type": "shell",
             "command": "bazel",
-            "args": ["build", "//server:blur_image", "--compilation_mode=dbg"],
+            "args": ["build", "//server:app", "--compilation_mode=dbg"],
             "group": {
                 "kind": "build",
                 "isDefault": true

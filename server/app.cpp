@@ -3,6 +3,8 @@
 
 #include <opencv2/opencv.hpp>
 
+#include "core/img_processor.hpp"
+
 
 int main(int argc, char **argv) {
     std::string input_path(argv[1]);
@@ -16,10 +18,8 @@ int main(int argc, char **argv) {
         return 1;
     }
 
-    cv::Mat blurredImage;
-    cv::GaussianBlur(image, blurredImage, cv::Size(31, 31), 5.0);
-
-    cv::imwrite(output_path.c_str(), blurredImage);
+    auto blurred = img_processor::blur(image);
+    cv::imwrite(output_path.c_str(), blurred);
 
     return 0;
 }
