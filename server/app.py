@@ -3,6 +3,8 @@ import cv2
 import numpy as np
 from io import BytesIO
 
+import img_proc_lib as improc
+
 
 app = Flask(__name__)
 
@@ -17,9 +19,9 @@ def process_image():
     image = np.frombuffer(image_stream, dtype=np.uint8)
     image = cv2.imdecode(image, cv2.IMREAD_COLOR)
 
-    negative_image = 255 - image
+    result = improc.blur(image)
 
-    is_success, buffer = cv2.imencode(".jpg", negative_image)
+    is_success, buffer = cv2.imencode(".jpg", result)
     if not is_success:
         return "Could not encode image", 500
 
